@@ -14,7 +14,7 @@ const ticketCard = ({color, ticket}) => {
                 <h3>{ticket.title}</h3>
                 <AvatarDisplay ticket ={ticket}/>
                 <StatusDisplay status={ticket.status}/>
-                <PriorityDisplay/>
+                <PriorityDisplay priority={ticket.priority}/>
                 <ProgressDisplay/>
             </div>
             {/* </link> */}
@@ -24,5 +24,5 @@ const ticketCard = ({color, ticket}) => {
 }
 
 // 46:14 on the video link is preventing the page from rendering properly
-// Got to  52:22
+// Got to  58:58
 export default ticketCard

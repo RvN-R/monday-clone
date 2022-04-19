@@ -28,12 +28,14 @@ nav .controls-container{
 }
 
 .logo{
-    width: 30px;
+    width: 60px;
     color:white;
+    background-color: white;
 }
 
 nav .icon {
     color: white;
+    width: 30px;
 }
 
 /*DashBoard*/
@@ -46,4 +48,11 @@ nav .icon {
 .dashboard .ticket-container {
     height: 88vh;
     overflow: scroll;
+}
+
+/*TicketCard*/
+
+.ticket-card{
+    display: flex;
+    width: 100%;
 }

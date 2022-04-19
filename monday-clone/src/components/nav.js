@@ -8,11 +8,11 @@ const Nav = () => {
     return (
         <nav>
             <div className="logo-container">
-                <img src={logo} alt="logo"/>
+                <img src={logo} alt="logo" className='logo'/>
             </div>
             <div className='controls-container'>
-                <div onClick={() => navigate('/ticket')}>＋</div>
-                <div onClick={() => navigate('/')}>🖜</div>
+                <div className ="icon" onClick={() => navigate('/ticket')}>＋</div>
+                <div className ="icon" onClick={() => navigate('/')}>🖜</div>
             </div>
 
         </nav>
@@ -22,4 +22,3 @@ const Nav = () => {
 export default Nav
 
 // got to 27.50 in the video 
-// onClick in the video simply doesn't work for me 

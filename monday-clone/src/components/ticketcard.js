@@ -8,16 +8,21 @@ import DeleteBlock from "./deleteblock"
 const ticketCard = ({color, ticket}) => {
     return (
         <div className="ticket-card">
-            {/* <link> */}
+            {/* <link to = {`/ticket/${ticket.documentId}`} id="link"> */}
+            <div id='link'>
                 <div className="ticket-color"></div>
                 <h3>{ticket.title}</h3>
-                <AvatarDisplay/>
-                <StatusDisplay/>
+                <AvatarDisplay ticket ={ticket}/>
+                <StatusDisplay status={ticket.status}/>
                 <PriorityDisplay/>
                 <ProgressDisplay/>
+            </div>
             {/* </link> */}
             <DeleteBlock/>
         </div>
     )
 }
+
+// 46:14 on the video link is preventing the page from rendering properly
+// Got to  52:22
 export default ticketCard

@@ -24,5 +24,5 @@ const ticketCard = ({color, ticket}) => {
 }
 
 // 46:14 on the video link is preventing the page from rendering properly
-// Got to  1:14:44
+// Got to  1:35:18
 export default ticketCard

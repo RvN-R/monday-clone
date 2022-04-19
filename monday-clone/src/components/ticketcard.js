@@ -10,7 +10,7 @@ const ticketCard = ({color, ticket}) => {
         <div className="ticket-card">
             {/* <link to = {`/ticket/${ticket.documentId}`} id="link"> */}
             <div id='link'>
-                <div className="ticket-color"></div>
+                <div className="ticket-color" style={{backgroundColor: color}}></div>
                 <h3>{ticket.title}</h3>
                 <AvatarDisplay ticket ={ticket}/>
                 <StatusDisplay status={ticket.status}/>
@@ -24,5 +24,5 @@ const ticketCard = ({color, ticket}) => {
 }
 
 // 46:14 on the video link is preventing the page from rendering properly
-// Got to  58:58
+// Got to  1:14:44
 export default ticketCard

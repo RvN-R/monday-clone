@@ -24,5 +24,5 @@ const ticketCard = ({color, ticket}) => {
 }
 
 // 46:14 on the video link is preventing the page from rendering properly
-// Got to  1:35:18
+// Got to  1:41:07 - having difficulty connecting to Dashboard - Deleted monday clone database need to start a fresh - Think it has something to do with fact I am doing this on Gitpod and its messing up my port 8000 URL
 export default ticketCard

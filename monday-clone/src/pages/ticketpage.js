@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
-const ticketPage = () => {
+const TicketPage = () => {
     const [formData, setFormData] = useState({
         status: 'not started',
         progress: 0,
@@ -200,4 +200,4 @@ const ticketPage = () => {
         </div>
     )
 }
-export default ticketPage
+export default TicketPage

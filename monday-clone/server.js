@@ -13,11 +13,11 @@ const token = 'AstraCS:IXNHZSGuAYAcEJMztbXmxxbA:2c116de9f2eb4e8ae9d1ff7d4cf889e6
 
 app.get('/tickets', async (req, res) => {
     const options = {
-        method: 'POST',
+        method: 'GET',
         headers: {
             Accepts: 'application/json',
             'X-Cassandra-Token': token,
-        },
+        }
     }
     try {
         const response = await axios(`${url}?page-size=20`, options)

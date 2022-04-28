@@ -8,7 +8,7 @@ import DeleteBlock from "./deleteblock"
 const ticketCard = ({color, ticket}) => {
     return (
         <div className="ticket-card">
-            {/* <link to = {`/ticket/${ticket.documentId}`} id="link"> */}
+            <Link to = {`/ticket/${ticket.documentId}`} id="link">
             <div id='link'>
                 <div className="ticket-color" style={{backgroundColor: color}}></div>
                 <h3>{ticket.title}</h3>
@@ -17,7 +17,7 @@ const ticketCard = ({color, ticket}) => {
                 <PriorityDisplay priority={ticket.priority}/>
                 <ProgressDisplay progress={ticket.progress}/>
             </div>
-            {/* </link> */}
+            </Link>
             <DeleteBlock documentId={ticket.documentId}/>
         </div>
     )

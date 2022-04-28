@@ -1,29 +1,41 @@
 import { useState, useEffect, useContext } from 'react'
 import TicketCard from '../components/ticketcard'
 import axios from 'axios'
+import CategoriesContext from '../context'
 
+// Effect callbacks are synchronous to prevent race conditions. So I have put the async function inside the useEffect
 const Dashboard = () => {
     const [tickets, setTickets] = useState(null)
+    const {categories, setCategories} = useContext(CategoriesContext)
 
-    // useEffect(async () => {
-    //     const response = await axios.get('http://localhost:8000/tickets')
+    useEffect(() => {
+        async function fetchData(){
+            const response = await axios.get('http://localhost:8000/tickets')
 
-    //     const dataObject = response.data.data
+            const dataObject = response.data.data
+        
+            const arrayOfKeys = Object.keys(dataObject)
+            const arrayOfData = Object.keys(dataObject).map((key) => dataObject[key])
+            const formattedArray = []
+            arrayOfKeys.forEach((key, index) => {
+                const formattedData = { ...arrayOfData[index]}
+                formattedData['documentId'] = key
+                formattedArray.push(formattedData)
+                })
+                setTickets(formattedArray)
+        
+        }
+        fetchData();
+    }, [])
 
-    //     const arrayOfKeys = Object.keys(dataObject)
-    //     const arrayOfData = Object.keys(dataObject).map((key) => dataObject[key])
-    //     const formattedArray = []
-    //     arrayOfKeys.forEach((key, index) => {
-    //         const formattedData = { ...arrayOfData[index]}
-    //         formattedData['documentId'] = key
-    //         formattedArray.push(formattedData)
-    //      })
-    //      setTickets(formattedArray)
+    useEffect(() => {
+        setCategories([...new Set(tickets?.map(({ category }) => category))])
+    }, [tickets])
 
-    // }, [])
+    console.log(categories)
 
-    // Got to 2:09:11 in the video stuck the code above isn't working the way it should ! Above commented out code isn't correct way to write a useEffect. 
-
+    // Got to 2:19:30 in the video
+    
     const colors = [
         'rgb(255,179,186)',
         'rgb(255,223,186)',
@@ -33,8 +45,10 @@ const Dashboard = () => {
     ]
 
     const uniqueCategories = [
-        ...new Set(tickets?.map(({category}) => category))
-    ]
+        ...new Set(tickets?.map(({ category }) => category)),
+      ]
+
+
 
     console.log(uniqueCategories)
 

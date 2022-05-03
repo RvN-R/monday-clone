@@ -180,9 +180,9 @@ const TicketPage = ({ editMode }) => {
                             onChange={handleChange}
                         >
                             <option selected={formData.status === 'done'} value='done'>Done</option>
-                            <option selected={formData.status === 'working on it'} value='working on it'>working on it</option>
-                            <option selected={formData.status === 'stuck'} value='stuck'>stuck</option>
-                            <option selected={formData.status === 'not started'} value='not started'>not started</option>
+                            <option selected={formData.status === 'working on it'} value='working on it'>Working On It</option>
+                            <option selected={formData.status === 'stuck'} value='stuck'>Stuck</option>
+                            <option selected={formData.status === 'not started'} value='not started'>Not Started</option>
                         </select>
                         </>
                         }

@@ -33,8 +33,6 @@ const Dashboard = () => {
     }, [tickets])
 
     console.log(categories)
-
-    // Got to 2:19:30 in the video
     
     const colors = [
         'rgb(255,179,186)',

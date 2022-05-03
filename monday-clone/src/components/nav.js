@@ -1,5 +1,9 @@
 import logo from '../images/saturnicon.png'
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSatellite } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faHomeUser } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = () => {
     
@@ -8,11 +12,11 @@ const Nav = () => {
     return (
         <nav>
             <div className="logo-container">
-                <img src={logo} alt="logo" className='logo'/>
+                <div className='logo'><FontAwesomeIcon icon={faSatellite} size="3x"/></div>
             </div>
             <div className='controls-container'>
-                <div className ="icon" onClick={() => navigate('/ticket')}>＋</div>
-                <div className ="icon" onClick={() => navigate('/')}>My Projects</div>
+                <div className ="icon" onClick={() => navigate('/ticket')}><FontAwesomeIcon icon={faPlusCircle} size='lg'/></div>
+                <div className ="icon" onClick={() => navigate('/')}><FontAwesomeIcon icon={faHomeUser} size='lg'/></div>
             </div>
 
         </nav>

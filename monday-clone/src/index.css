@@ -17,7 +17,7 @@ html , body {
 
 nav {
     height: 100vh;
-    background-color: rgb(43, 43, 64);
+    background-color: #0E302B;
     color: white;
     text-align: center;
     display: flex;
@@ -34,13 +34,21 @@ nav .controls-container{
 
 .logo{
     width: 60px;
-    color:white;
-    background-color: white;
+    color:#e87d16;
 }
 
 nav .icon {
-    color: white;
+    color: #02d6aa;
     width: 30px;
+    padding: 5px 5px;
+}
+
+nav .icon:hover{
+    color: #bdc354;
+}
+
+nav .icon:active{
+    color: #e87d16;
 }
 
 /*DashBoard*/

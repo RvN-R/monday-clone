@@ -9,8 +9,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const url = 'https://89d5e088-403e-4f3d-996d-bffb1bdd98a7-europe-west1.apps.astra.datastax.com/api/rest/v2/namespaces/tickets/collections/tasks'
-const token = 'AstraCS:IXNHZSGuAYAcEJMztbXmxxbA:2c116de9f2eb4e8ae9d1ff7d4cf889e6f277c864935b86a579b63570e2b440cb'
+const url = process.env.URL
+ const token = process.env.ASTRA_TOKEN
 
 // Get all the tickets
 app.get('/tickets', async (req, res) => {
@@ -113,9 +113,6 @@ app.delete('/tickets/:documentId', async (req,res) => {
         res.status(500).json({message: err})
     }
 })
-
-
-
 
 
 app.listen(PORT, () => console.log('server running on PORT ' + PORT))

@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 const url = process.env.URL
- const token = process.env.ASTRA_TOKEN
+const token = process.env.ASTRA_TOKEN
 
 // Get all the tickets
 app.get('/tickets', async (req, res) => {
@@ -50,7 +50,7 @@ app.get('/tickets/:documentId', async (req,res) => {
     }
 })
 
-
+// Update ticket
 app.post('/tickets', async (req, res) => {
     const formData = req.body.formData
 
@@ -73,6 +73,7 @@ app.post('/tickets', async (req, res) => {
     }
 })
 
+// Update ticket
 app.put('/tickets/:documentId', async (req,res) => {
     const id = req.params.documentId
     const data = req.body.data
@@ -95,7 +96,7 @@ app.put('/tickets/:documentId', async (req,res) => {
 })
 
 
-
+//Delete ticket
 app.delete('/tickets/:documentId', async (req,res) => {
     const id = req.params.documentId
     const options = {
